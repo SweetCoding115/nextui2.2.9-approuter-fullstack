@@ -12,6 +12,7 @@ import DiscordButton from "@/components/buttons/DiscordButton";
 import GoogleButton from "@/components/buttons/GoogleButton";
 import LoginButton from "@/components/buttons/LoginButton";
 import LogoutButton from "@/components/buttons/LogoutButton";
+import GithubButton from "@/components/buttons/GithubButton";
 
 export default async function Home() {
   const session = (await getServerSession()) || {};
@@ -33,9 +34,10 @@ export default async function Home() {
         </h2>
       </div>
       {Object.keys(session).length === 0 ? <LoginButton /> : <LogoutButton />}
-      <div className="grid grid-cols-1 gap-y-4 md:grid-cols-2 md:gap-x-6">
+      <div className="grid grid-cols-1 gap-y-4 md:grid-cols-3 md:gap-x-6">
         <GoogleButton />
         <DiscordButton />
+        <GithubButton />
       </div>
       <div className="flex gap-3">
         <Link

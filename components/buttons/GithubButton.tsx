@@ -1,6 +1,7 @@
 "use client";
 
 import { signIn } from "next-auth/react";
+import { GithubIcon } from "../icons";
 
 export default function GithubButton() {
   return (
@@ -8,7 +9,7 @@ export default function GithubButton() {
       className="border border-slate-300 rounded px-5 py-4 flex items-center"
       onClick={() => signIn("github")}
     >
-      <svg
+      {/* <svg
         xmlns="http://www.w3.org/2000/svg"
         enableBackground="new 0 0 100 100"
         viewBox="0 0 100 100"
@@ -30,7 +31,8 @@ export default function GithubButton() {
             13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z"
           fill="#24292f"
         />
-      </svg>
+      </svg> */}
+      <GithubIcon size={24} />
       <div className="px-2"></div>
       <span>Sign In with Github</span>
     </button>
