@@ -2,10 +2,8 @@ import LoginButton from "@/components/buttons/LoginButton";
 import { getProviders } from "next-auth/react";
 
 export default async function SignIn() {
-  // const providers: ReturnType<typeof getProviders> = (await getProviders()) || {};
   const providers: ReturnType<typeof getProviders> | Object =
     (await getProviders()) || {};
-  // if (providers)
   return (
     <div className="flex min-h-screen flex-col items-center p-24">
       {Object.values(providers).map((provider) => {
