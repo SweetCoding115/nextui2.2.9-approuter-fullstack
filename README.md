@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d17caeac-fd15-422d-a1e6-fa390a3a09e4/deploy-status)](https://app.netlify.com/sites/nextui-nextauth-mongodb/deploys)
+
 # Next.js & NextUI Template
 
 This is a template for creating applications using Next.js 13 (app directory) and NextUI (v2).
