@@ -41,7 +41,7 @@ export default async function Home() {
       </div>
       <div className="flex gap-3">
         <Link
-          isExternal
+          // isExternal
           href={siteConfig.links.docs}
           className={buttonStyles({
             color: "primary",
@@ -52,7 +52,7 @@ export default async function Home() {
           Documentation
         </Link>
         <Link
-          isExternal
+          // isExternal
           className={buttonStyles({ variant: "bordered", radius: "full" })}
           href={siteConfig.links.github}
         >

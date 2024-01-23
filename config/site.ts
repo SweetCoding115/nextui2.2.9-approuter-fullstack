@@ -60,10 +60,10 @@ export const siteConfig = {
     },
   ],
   links: {
-    github: "https://github.com/nextui-org/nextui",
-    twitter: "https://twitter.com/getnextui",
-    docs: "https://nextui.org",
-    discord: "https://discordapp.com/users/1137049992398381087",
-    sponsor: "https://github.com/SweetCoding115",
+    github: "#",
+    twitter: "#",
+    docs: "#",
+    discord: "#",
+    sponsor: "#",
   },
 };
