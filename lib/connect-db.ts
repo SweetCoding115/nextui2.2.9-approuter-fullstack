@@ -1,5 +1,3 @@
-// lib/dbConnect.tsx
-
 import _mongoose, { connect } from "mongoose";
 
 declare global {
@@ -11,10 +9,8 @@ declare global {
 
 const MONGODB_URI = process.env.MONGODB_URI;
 
-if (!MONGODB_URI) {
-  throw new Error(
-    "Please define the MONGODB_URI environment variable inside .env.local"
-  );
+if (!MONGODB_URI || MONGODB_URI.length === 0) {
+  throw new Error("Please add your MongoDB URI to .env.local");
 }
 
 /**
@@ -28,8 +24,9 @@ if (!cached) {
   cached = global.mongoose = { conn: null, promise: null };
 }
 
-async function dbConnect() {
+async function connectDB() {
   if (cached.conn) {
+    console.log("🚀 Using cached connection");
     return cached.conn;
   }
 
@@ -38,9 +35,15 @@ async function dbConnect() {
       bufferCommands: false,
     };
 
-    cached.promise = connect(MONGODB_URI!, opts).then((mongoose) => {
-      return mongoose;
-    });
+    cached.promise = connect(MONGODB_URI!, opts)
+      .then((mongoose) => {
+        console.log("✅ New connection established");
+        return mongoose;
+      })
+      .catch((error) => {
+        console.error("❌ Connection to database failed");
+        throw error;
+      });
   }
 
   try {
@@ -53,4 +56,4 @@ async function dbConnect() {
   return cached.conn;
 }
 
-export default dbConnect;
+export default connectDB;

@@ -14,7 +14,7 @@ export default async function Protected() {
         <h1 className="text-2xl font-bold">Protected Page</h1>
         <LogoutButton />
       </div>
-      <pre className="w-full bg-gray-200 p-4 rounded break-words whitespace-pre-wrap">
+      <pre className="w-full bg-gray-200 dark:bg-gray-800 p-4 rounded break-words whitespace-pre-wrap">
         {JSON.stringify(session, null, 2)}
       </pre>
     </main>
